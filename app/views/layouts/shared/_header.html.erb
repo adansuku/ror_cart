@@ -1,0 +1,18 @@
+<nav>
+  <ul>
+    <li><a href="/">Inicio</a></li>
+    <li><a href="/products/show">Products</a></li>
+    <% if user_signed_in? %>
+      <%= button_to 'Sign out', destroy_user_session_path, method: :delete %>
+    <% else %>
+      <li><a href="/users/sign_in">Login</a></li>
+      <li><a href="/users/sign_up">Sign up</a></li>
+    <% end %>
+  </ul>
+
+<div>
+  <% if user_signed_in? %>
+    <%= render "/layouts/shared/cart" %>
+  <% end %>
+</div>
+</nav>
