@@ -1,24 +1,30 @@
 class Discount < ApplicationRecord
   has_many :products
 
+  validates :name, :discount_type, :value, :minimum_quantity, presence: true
+
   def calculate_discounted_price(price, quantity)
     return price * quantity unless meets_minimum_quantity?(quantity)
 
+    apply_price(price, quantity)
+  end
+
+  private
+
+  def apply_price(price, quantity)
     case discount_type
-    when 'BUY_ONE_GET_ONE'
+    when 'BOGO'
       (quantity / 2 + quantity % 2) * price
     when 'BULK'
       quantity * value
     when 'PERCENTAGE'
-      quantity * price * (1 - value)
+      quantity * price * (1 - (1 / 3))
     else
       quantity * price
     end
   end
 
-  private
-
-  # Verifica si se cumple la cantidad mínima para el descuento
+  # Check if the minimum quantity for the discount is met
   def meets_minimum_quantity?(quantity)
     quantity >= minimum_quantity
   end

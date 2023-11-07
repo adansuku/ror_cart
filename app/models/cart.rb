@@ -9,6 +9,6 @@ class Cart < ApplicationRecord
   end
 
   def total_price
-    cart_items.sum(&:discounted_price)
+    cart_items.sum(&:total_price)
   end
 end
