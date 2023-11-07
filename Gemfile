@@ -48,6 +48,9 @@ gem 'bootsnap', require: false
 # gem 'image_processing', '~> 1.2'
 
 group :development, :test do
+  gem 'factory_bot_rails'
+  gem 'rspec-rails'
+
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem 'byebug', '11.1.3'
   gem 'debug', platforms: %i[mri mswin mswin64 mingw x64_mingw]
@@ -58,8 +61,8 @@ end
 
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
-  gem 'web-console'
   gem 'error_highlight', '>= 0.4.0', platforms: [:ruby]
+  gem 'web-console'
 end
 
 group :test do
