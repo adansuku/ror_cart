@@ -16,8 +16,6 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_07_113025) do
     t.integer "quantity"
     t.float "total_price"
     t.bigint "product_id"
-    t.decimal "discount", precision: 10, scale: 2
-    t.decimal "subtotal", precision: 10, scale: 2
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["cart_id"], name: "index_cart_items_on_cart_id"
@@ -34,7 +32,7 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_07_113025) do
   create_table "discounts", charset: "utf8mb4", force: :cascade do |t|
     t.string "name"
     t.string "discount_type"
-    t.decimal "value", precision: 10, scale: 2
+    t.float "value"
     t.integer "minimum_quantity"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -43,7 +41,7 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_07_113025) do
   create_table "products", charset: "utf8mb4", force: :cascade do |t|
     t.string "product_code"
     t.string "name"
-    t.decimal "price", precision: 10, scale: 2
+    t.float "price"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "discount_id"

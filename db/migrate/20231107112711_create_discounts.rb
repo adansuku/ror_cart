@@ -3,7 +3,7 @@ class CreateDiscounts < ActiveRecord::Migration[7.0]
     create_table :discounts do |t|
       t.string :name
       t.string :discount_type
-      t.decimal :value, precision: 10, scale: 2
+      t.float :value
       t.integer :minimum_quantity
 
       t.timestamps
