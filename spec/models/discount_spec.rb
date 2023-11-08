@@ -57,6 +57,6 @@ RSpec.describe Discount, type: :model do
 
   it 'calculates discounted price correctly for bulk coffee' do
     expect(bulk_coffee.calculate_discounted_price(coffee.price,
-                                                  3).round(2)).to eq((coffee.price * (1 - (1 / 3)) * 3).round(2))
+                                                  3).round(2)).to eq((coffee.price * (1 - (1.0 / 3.0)) * 3).round(2))
   end
 end

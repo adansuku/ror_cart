@@ -18,7 +18,7 @@ class Discount < ApplicationRecord
     when 'BULK'
       quantity * value
     when 'PERCENTAGE'
-      quantity * price * (1 - (1 / 3))
+      quantity * price * (1 - (1.0 / 3.0))
     else
       quantity * price
     end
