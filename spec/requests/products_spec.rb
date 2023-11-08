@@ -1,39 +1,62 @@
 require 'rails_helper'
 
-RSpec.describe "Products", type: :request do
-  describe "GET /show" do
-    it "returns http success" do
-      get "/products/show"
-      expect(response).to have_http_status(:success)
+RSpec.describe 'Products', type: :request do
+  let(:user) { FactoryBot.create(:user) }
+  describe 'without user logged in' do
+    it 'returns http error if the user is not logged' do
+      get '/products/show'
+      expect(response).to have_http_status(302)
+    end
+
+    it 'returns http error if the user is not logged' do
+      get '/products/create'
+      expect(response).to have_http_status(302)
+    end
+
+    it 'returns http error if the user is not logged' do
+      get '/products/edit'
+      expect(response).to have_http_status(302)
+    end
+
+    it 'returns http error if the user is not logged' do
+      get '/products/update'
+      expect(response).to have_http_status(302)
+    end
+
+    it 'returns http error if the user is not logged' do
+      get '/products/destroy'
+      expect(response).to have_http_status(302)
     end
   end
 
-  describe "GET /create" do
-    it "returns http success" do
-      get "/products/create"
-      expect(response).to have_http_status(:success)
+  describe 'with user logged in' do
+    before do
+      sign_in user
+    end
+
+    it 'returns http success on GET /show' do
+      get '/products/show'
+      expect(response).to have_http_status(200)
+    end
+
+    it 'returns http success on GET /create' do
+      get '/products/create'
+      expect(response).to have_http_status(200)
+    end
+
+    it 'returns http success on GET /edit' do
+      get '/products/edit'
+      expect(response).to have_http_status(200)
+    end
+
+    it 'returns http success on GET /update' do
+      get '/products/update'
+      expect(response).to have_http_status(200)
+    end
+
+    it 'returns http success on GET /destroy' do
+      get '/products/destroy'
+      expect(response).to have_http_status(200)
     end
   end
-
-  describe "GET /edit" do
-    it "returns http success" do
-      get "/products/edit"
-      expect(response).to have_http_status(:success)
-    end
-  end
-
-  describe "GET /update" do
-    it "returns http success" do
-      get "/products/update"
-      expect(response).to have_http_status(:success)
-    end
-  end
-
-  describe "GET /destroy" do
-    it "returns http success" do
-      get "/products/destroy"
-      expect(response).to have_http_status(:success)
-    end
-  end
-
 end

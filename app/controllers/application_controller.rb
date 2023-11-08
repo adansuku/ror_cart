@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
   before_action :initialize_cart
+  helper_method :current_cart
 
   private
 
