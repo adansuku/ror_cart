@@ -5,9 +5,6 @@ class CreateCartItems < ActiveRecord::Migration[7.1]
       t.integer :quantity
       t.float :total_price
       t.references :product
-      # t.float :discount
-      # t.float :subtotal
-
       t.timestamps
     end
   end
