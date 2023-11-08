@@ -28,4 +28,20 @@
 #       enabled: "ON"
 
 en:
-  hello: "Hello world"
+  menu:
+    company: "Amenitiz"
+    home: "Home"
+  user:
+    sign_out: "Sign out"
+    login: "Login"
+    sign_up: "Sign up"
+    welcome: "Welcome to Amenitiz shop"
+  cart: 
+    savings_text: "You are saving..."
+    cart_products: "You have %{items} item/s in your cart"
+    clear_cart: "Clear cart"
+    remove_product: "Remove product"
+    add_to_cart: "Add to cart"
+  product:
+    reference: "Reference:"
+
