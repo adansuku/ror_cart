@@ -14,7 +14,7 @@ RSpec.describe CartsController, type: :controller do
         post :add_to_cart, params: { product_id: product.id }
       end.to change(user.carts, :count).by(1)
 
-      expect(response).to redirect_to(products_show_path)
+      expect(response).to redirect_to(root_path)
       expect(flash[:notice]).to eq('Product added to cart!')
     end
 
@@ -23,7 +23,7 @@ RSpec.describe CartsController, type: :controller do
         post :add_to_cart, params: { product_id: -1 }
       end.not_to change(user.carts, :count)
 
-      expect(response).to redirect_to(products_show_path)
+      expect(response).to redirect_to(root_path)
       expect(flash[:alert]).to eq('Product not found')
     end
   end

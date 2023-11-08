@@ -31,7 +31,7 @@
          <%= button_to t("cart.clear_cart"), clear_cart_items_path, method: :get, class: "btn btn-primary-outline bg-secondary text-white" %>
       <% end %>
       <hr>
-      <h5>Total: <%= current_cart.total_price %> €  </h5>
+      <h5>Total: <%= current_cart.total_price.round(2) %> €  </h5>
       <hr>
       <p><%= t("cart.cart_products", items: @number_of_cart_items ) %></p>
    </div>

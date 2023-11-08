@@ -6,7 +6,7 @@ class CartsController < ApplicationController
     product = Product.find(params[:product_id])
     current_cart.add_product(product)
 
-    redirect_to products_show_path, notice: 'Product added to cart!'
+    redirect_to root_path, notice: 'Product added to cart!'
   end
 
   def empty_cart

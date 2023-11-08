@@ -1,10 +1,5 @@
 Rails.application.routes.draw do
-  get 'products/show'
-  get 'products/create'
-  get 'products/edit'
-  get 'products/update'
-  get 'products/destroy'
-
+  resources :products
   resources :cart_items, only: [:update], as: 'update_cart_items'
   resources :cart_items, only: [:destroy], as: 'destroy_cart_items'
 
@@ -21,5 +16,5 @@ Rails.application.routes.draw do
   }
 
   # Default root
-  root 'products#show'
+  root 'products#index'
 end
