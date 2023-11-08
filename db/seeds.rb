@@ -30,10 +30,31 @@ percentage_discount_coffee = Discount.create!(
 )
 
 # Create products and discounts
-green_tea = Product.create!(product_code: 'GR1', name: 'Green Tea', price: 3.11, discount: bogo_discount)
-strawberries = Product.create!(product_code: 'SR1', name: 'Strawberries', price: 5.00,
-                               discount: bulk_discount_strawberries)
-coffee = Product.create!(product_code: 'CF1', name: 'Coffee', price: 11.23, discount: percentage_discount_coffee)
+green_tea_image = 'https://static-bebeautiful-in.unileverservices.com/green-tea-youthful-skin-secret_1.jpg'
+strawberries_image = 'https://cdn11.bigcommerce.com/s-i7i23daso6/images/stencil/640w/products/10739/15772/Strawberry_Florence_Late_0005016__40227.1623343614.jpg'
+coffe_image = 'https://www.tastingtable.com/img/gallery/coffee-brands-ranked-from-worst-to-best/intro-1645231221.jpg'
+
+green_tea = Product.create!(
+  product_code: 'GR1',
+  name: 'Green Tea',
+  price: 3.11,
+  discount: bogo_discount,
+  image: green_tea_image
+)
+
+strawberries = Product.create!(
+  product_code: 'SR1',
+  name: 'Strawberries', price: 5.00,
+  discount: bulk_discount_strawberries,
+  image: strawberries_image
+)
+
+coffee = Product.create!(
+  product_code: 'CF1', name: 'Coffee',
+  price: 11.23,
+  discount: percentage_discount_coffee,
+  image: coffe_image
+)
 
 # Create an user
 user = User.create!(
@@ -41,11 +62,5 @@ user = User.create!(
   password: 'password123',
   password_confirmation: 'password123'
 )
-
-# Create cart and add products
-cart = Cart.create!(user: user)
-cart.add_product(green_tea, 2)
-cart.add_product(strawberries, 3)
-cart.add_product(coffee, 1)
 
 puts 'Products, Discounts, Cart Items, and User have been seeded.'
