@@ -6,9 +6,10 @@ class CartsController < ApplicationController
     product = Product.find(params[:product_id])
     current_cart.add_product(product)
 
-    # Redirigir al usuario con un mensaje
-    redirect_to products_show_path, notice: 'Producto agregado al carrito!'
+    redirect_to products_show_path, notice: 'Product added to cart!'
   end
 
-
+  def empty_cart
+    current_user.carts.destroy_all
+  end
 end

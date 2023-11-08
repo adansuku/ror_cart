@@ -12,8 +12,12 @@ class CartItemsController < ApplicationController
 
   def destroy
     cart_item = CartItem.find(params[:id])
-    cart_item.destroy
-    redirect_to root_path
+
+    if cart_item.destroy
+      redirect_to root_path, notice: 'Product removed.'
+    else
+      redirect_to root_path, alert: 'Could not remove the item.'
+    end
   end
 
   private
