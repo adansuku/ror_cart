@@ -1,15 +1,38 @@
-<h2>Cart</h2>
-<% @cart_items.each do |cart_item| %>
-    <%= form_with url: update_cart_item_path(cart_item), method: :patch do |form| %>
-      <%= form.number_field :quantity, value: cart_item.quantity %>
-      <%= form.submit "Update" %>
-    <% end %>
-    | <%= cart_item.product.product_code %>
-    | <%= cart_item.product.name %>
-    | <%= cart_item.total_price %> €
-    <%= button_to 'X', destroy_cart_item_path(cart_item), method: :delete, data: { confirm: 'Are you sure?' } %>
-<% end %>
-  <hr>
-  Total: <%= current_cart.total_price %> €  
-  <hr>
-  Cart: <%= @number_of_cart_items %> items
+<div class="row row-cols-12 g-3 bg-light p-3">
+   <% @cart_items.each do |cart_item| %> 
+   <div class="col-xs-12">
+      <div class="card">
+         <div class="card-body">
+            <div class="d-flex">
+               <h5 class="card-title"><%= cart_item.product.product_code %> | <%= cart_item.product.name %></h5>
+               <h3 class="card-title ms-auto"> <%= cart_item.total_price %> € </h3>
+
+            </div>
+            <div class="d-flex">
+               <div class="input-group mb-3">
+                  <%= form_with url: update_cart_item_path(cart_item), class: "d-flex", method: :patch do |form| %>  
+                  <%= form.number_field :quantity, value: cart_item.quantity, class: "form-control" %>
+                  <%= form.submit "Update", class: "btn btn-outline-secondary" %>
+                  <% end %>
+               </div>
+            </div>
+            <% if cart_item.discount_amount > 0 %>
+               <p><%= t("cart.savings_text") %> <%= cart_item.discount_amount %> €  </p>
+            <% end%>
+         </div>
+      </div>
+      <div>      
+         <%= button_to t("cart.remove_product"), destroy_cart_item_path(cart_item), method: :delete, class: "ms-auto btn btn-primary-outline red" %>
+      </div>
+   </div>
+   <% end %>
+   <div class="totals px-3">
+      <% if @cart_items.present?%>
+         <%= button_to t("cart.clear_cart"), clear_cart_items_path, method: :get, class: "btn btn-primary-outline bg-secondary text-white" %>
+      <% end %>
+      <hr>
+      <h5>Total: <%= current_cart.total_price %> €  </h5>
+      <hr>
+      <p><%= t("cart.cart_products", items: @number_of_cart_items ) %></p>
+   </div>
+</div>

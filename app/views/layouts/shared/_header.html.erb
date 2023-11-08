@@ -1,18 +1,34 @@
-<nav>
-  <ul>
-    <li><a href="/">Inicio</a></li>
-    <li><a href="/products/show">Products</a></li>
-    <% if user_signed_in? %>
-      <%= button_to 'Sign out', destroy_user_session_path, method: :delete %>
-    <% else %>
-      <li><a href="/users/sign_in">Login</a></li>
-      <li><a href="/users/sign_up">Sign up</a></li>
-    <% end %>
-  </ul>
-
-<div>
-  <% if user_signed_in? %>
-    <%= render "/layouts/shared/cart" %>
-  <% end %>
+<div class="bg-light">
+   <div class="container ">
+      <div class="row">
+         <nav class=" navbar navbar-expand-lg navbar-light ">
+            <a class="navbar-brand pt-3 ps-2" href="#">
+               <h5><%= t("menu.company") %></h5>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Amenitiz Challenge</span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+               <% if user_signed_in? %>
+               <ul class="navbar-nav">
+                  <li class="nav-item active">
+                     <a class="nav-link" href="/"><%= t("menu.home") %></a>
+                  </li>
+               </ul>
+               <ul class="navbar-nav ms-auto me-2">
+                  <%= button_to t("user.sign_out"), destroy_user_session_path, class: "btn btn-danger",method: :delete %>
+               </ul>
+               <% else %>
+               <ul class="navbar-nav ms-auto me-2">
+                  <li class="nav-item ml-auto">
+                     <a class=" btn btn-primary me-2" role="button"  href="/users/sign_in"><%= t("user.login") %></a>
+                  </li>
+                  <a class="btn btn-secondary" href="/users/sign_up"><%= t("user.sign_up") %></a></li>
+                  </li>
+               </ul>
+               <% end %>
+            </div>
+         </nav>
+      </div>
+   </div>
 </div>
-</nav>

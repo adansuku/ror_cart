@@ -1,11 +1,11 @@
-<h1>Products</h1>
-<% @products.each do |product| %>
-  <p>
-    <strong>Name:</strong>
-    <%= product.name %>
-    <strong>Price:</strong>
-    <%= product.price %>
-    <%= button_to 'Agregar al carrito', add_to_cart_path(product_id: product.id), method: :post, class: 'btn btn-primary' %>
-    <%= product.discount.name if product.discount %>
-  </p>
-<% end %>
+<div class="row">
+   <div class="col-md-8">
+      <h3 class="pb-3">Products</h3>
+      <%= render 'products/partials/product', products: @products %>
+   </div>
+
+   <div class="col-md-4">
+      <h3 class="pb-3">Cart</h3> 
+      <%= render 'layouts/shared/cart', products: @products %>
+   </div>
+</div>
