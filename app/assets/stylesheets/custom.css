@@ -1,0 +1,4 @@
+.productImage {
+	object-fit: cover;
+	max-height: 200px;
+}
