@@ -113,9 +113,9 @@ To ensure correctness, the following test data is used:
 
 ### Results in the app demostration
 
-![GR1,GR1](https://imgur.com/Kfuecl1)
-![SR1, SR1, GR1, SR1](https://imgur.com/8S7MeVe)
-![GR1, CF1, SR1, CF1, CF1](https://imgur.com/yLREJc3)
+![GR1,GR1](https://i.imgur.com/Kfuecl1.png)
+![SR1, SR1, GR1, SR1](https://i.imgur.com/8S7MeVe.png)
+![GR1, CF1, SR1, CF1, CF1](https://i.imgur.com/yLREJc3.png)
 
 ### Models Tested in the app
 
