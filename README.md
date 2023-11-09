@@ -7,11 +7,10 @@ This application serves as a simple cash register, capable of adding products to
 1. [Objective](#objective)
 2. [Technical Requirements](#technical-requirements)
 3. [Setup and Execution](#setup-and-execution)
-4. [Assumptions and Special Conditions](#assumptions-and-special-conditions)
+4. [Assumptions and Pricing Rules](#assumptions-and-princing-rules)
 5. [Test Data](#test-data)
-6. [Running Tests](#running-tests)
-7. [Contributing](#contributing)
-8. [Contact Information](#contact-information)
+6. [Models and Controllers Tested in the app](#models-and-controllers-tested-in-the-app)
+7. [Contact Information](#contact-information)
 
 ## Objective
 
@@ -23,10 +22,10 @@ The goal is to build an application that:
 
 ## Technical Requirements
 
-- Written in Ruby
-- Tested with Rspec
-- Docker
-- Mysql
+- **Programming Language:** This project is written in Ruby with RubyonRails Framework.
+- **Testing Framework:** RSpec has been used for testing purposes. Ensure you have RSpec installed and set up for running tests.
+- **Docker:** Make sure you have Docker installed on your system. Docker is used for containerization and deployment.
+- **Database:** This project relies on MySQL as the database system. Ensure you have MySQL set up and configured appropriately for the application.
 
 ## Setup and Execution
 
@@ -61,8 +60,7 @@ Follow these steps to get started:
 - mysql -u root -p
 - Insert the root password
 
-> `GRANT ALL PRIVILEGES ON development.* TO 'the_user'@'%';`
-> `GRANT ALL PRIVILEGES ON test.* TO 'the_user'@'%';` > `FLUSH PRIVILEGES;`
+> `GRANT ALL PRIVILEGES ON development.* TO 'the_user'@'%';` > `GRANT ALL PRIVILEGES ON test.* TO 'the_user'@'%';` > `FLUSH PRIVILEGES;`
 
 ## Assumptions and Pricing Rules
 
