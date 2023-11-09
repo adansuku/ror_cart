@@ -55,6 +55,15 @@ Follow these steps to get started:
 - How to runt the rspec suite tests
   > `docker-compose run web bundle exec rspec`
 
+** Fix Possible problems with database permissions **
+
+- docker-compose exec db bash
+- mysql -u root -p
+- Insert the root password
+
+> `GRANT ALL PRIVILEGES ON development.* TO 'the_user'@'%';`
+> `GRANT ALL PRIVILEGES ON test.* TO 'the_user'@'%';` > `FLUSH PRIVILEGES;`
+
 ## Assumptions and Pricing Rules
 
 **Registered Products**
@@ -117,7 +126,7 @@ To ensure correctness, the following test data is used:
 ![SR1, SR1, GR1, SR1](https://i.imgur.com/8S7MeVe.png)
 ![GR1, CF1, SR1, CF1, CF1](https://i.imgur.com/yLREJc3.png)
 
-### Models Tested in the app
+### Models and Controllers Tested in the app
 
 - **User:** Validates presence and uniqueness, association with the cart, and secure password.
 - **Cart:** Ensures one-to-one relationship with user, proper addition of products, and total price calculation.
@@ -125,10 +134,9 @@ To ensure correctness, the following test data is used:
 - **Product:** Validates the presence of necessary fields and associations with discounts and cart items.
 - **Discount:** Ensures that discounts are applied correctly based on the defined rules.
 
-### Controllers Tested
+### Tested
 
 - **CartsController:** Verifies that cart management functions properly, including the creation, update, and destruction of cart sessions.
-- **ProductsController:** Tests the product listing, addition to cart, and special pricing application.
 
 ### Test Coverage
 
