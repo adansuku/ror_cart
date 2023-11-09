@@ -6,28 +6,27 @@ RSpec.describe 'Carts', type: :request do
 
   describe 'without user logged in' do
     it 'returns http error if the user is not logged' do
-      get '/cart/show'
-      byebug
+      get '/carts/show'
       expect(response).to have_http_status(302)
     end
 
     it 'returns http error if the user is not logged' do
-      get '/cart/create'
+      get '/carts/create'
       expect(response).to have_http_status(302)
     end
 
     it 'returns http error if the user is not logged' do
-      get '/cart/edit'
+      get '/carts/edit'
       expect(response).to have_http_status(302)
     end
 
     it 'returns http error if the user is not logged' do
-      get '/cart/update'
+      get '/carts/update'
       expect(response).to have_http_status(302)
     end
 
     it 'returns http error if the user is not logged' do
-      get '/cart/destroy'
+      get '/carts/destroy'
       expect(response).to have_http_status(302)
     end
   end
@@ -38,27 +37,27 @@ RSpec.describe 'Carts', type: :request do
     end
 
     it 'returns http success on GET /show' do
-      get '/cart/show'
+      get '/carts/show'
       expect(response).to have_http_status(200)
     end
 
     it 'returns http success on GET /create' do
-      get '/cart/create'
+      get '/carts/create'
       expect(response).to have_http_status(200)
     end
 
     it 'returns http success on GET /edit' do
-      get '/cart/edit'
+      get '/carts/edit'
       expect(response).to have_http_status(200)
     end
 
     it 'returns http success on GET /update' do
-      get '/cart/update'
+      get '/carts/update'
       expect(response).to have_http_status(200)
     end
 
     it 'returns http success on GET /destroy' do
-      get '/cart/destroy'
+      get '/carts/destroy'
       expect(response).to have_http_status(200)
     end
   end

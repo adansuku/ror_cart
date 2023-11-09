@@ -4,8 +4,10 @@
       <div class="card">
         <img src="<%= product.image%>" class="card-img-top productImage">
         <div class="card-body">
-          <div class="position-absolute top-0 end-0 pt-2 px-3 text-end"> 
-          <strong><%= t("product.reference") %>: </strong> <small><%=  product.product_code %></small></div>
+          <div class="position-absolute top-0 end-0 py-1 px-3 text-end bg-white"> 
+              <strong><%= t("product.reference") %>: </strong> 
+              <small><%=  product.product_code %></small>
+          </div>
           <h5 class="card-title"><strong><%= product.name %></strong></h5>
           <h3 class="card-title ms-auto"><%= product.price %> €</h3>
           <p class="card-text"><%= product.discount.name if product.discount %></p>

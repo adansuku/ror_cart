@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
   resources :products
+  resources :carts
+
+  resources :cart_items, only: [:create], as: 'create_cart_items'
   resources :cart_items, only: [:update], as: 'update_cart_items'
   resources :cart_items, only: [:destroy], as: 'destroy_cart_items'
 
