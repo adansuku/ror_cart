@@ -108,6 +108,9 @@ password_confirmation: 'password123'
 
 Discounts are linked directly to products to facilitate a one-to-one relationship between a discount and a product. Should the need arise to assign multiple discounts to a single product, the data model will require adjustment to support many-to-many relationships, potentially through a junction table.
 
+### UI
+If you prefer, you can also use the UI at https://localhost:3000. Here you can add products to cart with amazing discounts! :D
+
 ## Test Data
 
 To ensure correctness, the following test data is used:
