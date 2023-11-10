@@ -11,7 +11,7 @@ User.delete_all
 bogo_discount = Discount.create!(
   name: 'Buy One Get One Free',
   discount_type: 'BOGO',
-  value: 1.0,
+  value: 2,
   minimum_quantity: 2
 )
 
@@ -25,7 +25,7 @@ bulk_discount_strawberries = Discount.create!(
 percentage_discount_coffee = Discount.create!(
   name: 'Percentage discount',
   discount_type: 'PERCENTAGE',
-  value: 0.3333,
+  value: 0.333334,
   minimum_quantity: 3
 )
 

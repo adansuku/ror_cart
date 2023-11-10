@@ -14,11 +14,12 @@ class Discount < ApplicationRecord
   def apply_price(price, quantity)
     case discount_type
     when 'BOGO'
-      (quantity / 2 + quantity % 2) * price
+      ((quantity / value.to_i) + (quantity % value.to_i)) * price
     when 'BULK'
       quantity * value
     when 'PERCENTAGE'
-      quantity * price * (1 - (1.0 / 3.0))
+      result = quantity * price * (1 - value)
+      result.round(2)
     else
       quantity * price
     end

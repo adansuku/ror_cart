@@ -4,6 +4,7 @@ RSpec.describe Discount, type: :model do
   let(:buy_one_get_one_free) do
     create(:discount,
            discount_type: 'BOGO',
+           value: 2,
            minimum_quantity: 2)
   end
   let(:bulk_strawberries) do
@@ -15,7 +16,7 @@ RSpec.describe Discount, type: :model do
   let(:bulk_coffee) do
     create(:discount,
            discount_type: 'PERCENTAGE',
-           value: 0.33,
+           value: 0.333334,
            minimum_quantity: 3)
   end
 
