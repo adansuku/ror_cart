@@ -4,28 +4,9 @@ class CartItem < ApplicationRecord
   belongs_to :product
 
   delegate :discount, to: :product, allow_nil: true
-  before_save :apply_and_save_discount
+  before_save :save_price_with_discount_if_exists
 
-  def apply_and_save_discount
-    if discount
-      apply_discount
-    else
-      self.total_price = product.price * quantity
-    end
-  end
-
-  private
-
-  def apply_discount
-    self.total_price = calculate_discounted_price
-    self.discount_amount = original_price - total_price
-  end
-
-  def original_price
-    product.price * quantity
-  end
-
-  def calculate_discounted_price
-    discount.calculate_discounted_price(product.price, quantity)
+  def save_price_with_discount_if_exists
+    CartItemService.new(self).apply_and_save_discount
   end
 end
