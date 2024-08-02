@@ -1,4 +1,4 @@
-# Amenitiz Cash Register Application
+# Cash Register Application
 
 This application serves as a simple cash register, capable of adding products to a cart and calculating the total price, including handling special pricing conditions.
 
