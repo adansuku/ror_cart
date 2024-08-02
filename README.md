@@ -156,11 +156,11 @@ We understand the importance of testing in the development lifecycle and welcome
 
 ## Frontend
 
-The frontend of the Amenitiz Cash Register Application has been designed with functionality as the priority. To achieve this goal, we have utilized Bootstrap for its extensive library of pre-styled components and responsive design templates. Bootstrap enables us to construct a user interface that is both accessible and straightforward, which aids in streamlining the development process.
+The frontend of the Cash Register Application has been designed with functionality as the priority. To achieve this goal, we have utilized Bootstrap for its extensive library of pre-styled components and responsive design templates. Bootstrap enables us to construct a user interface that is both accessible and straightforward, which aids in streamlining the development process.
 
 ## Future Scalability and Enhancements
 
-The current foundation of the Amenitiz Cash Register Application sets the stage for future scalability and the addition of complex features. Here’s how we envision the evolution of the application:
+The current foundation of the Cash Register Application sets the stage for future scalability and the addition of complex features. Here’s how we envision the evolution of the application:
 
 - **Order Management:** The application could be extended to support full order lifecycle management, tracking each step from cart creation to order fulfillment.
 
@@ -172,11 +172,11 @@ The current foundation of the Amenitiz Cash Register Application sets the stage 
 
 These enhancements would not only provide a more comprehensive user experience but also contribute to the robustness of the application, making it well-suited for businesses looking to scale their operations.
 
-By implementing these features, the Amenitiz Cash Register Application could evolve into a full-fledged e-commerce platform.
+By implementing these features, the Cash Register Application could evolve into a full-fledged e-commerce platform.
 
 ## Contact Information
 
-Thank you for considering the Amenitiz Cash Register Application. We look forward to your contributions and feedback.
+Thank you for considering the Cash Register Application. We look forward to your contributions and feedback.
 
 Adán González
 adangrx@gmail.com
