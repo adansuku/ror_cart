@@ -22,7 +22,7 @@ class ApplicationController < ActionController::Base
   def current_cart
     return unless user_signed_in?
 
-    @current_cart ||= Cart.find_by(id: session[:cart_id]) || Cart.create(user: current_user)
+    @current_cart ||= Cart.find_by_user_id(current_user.id) || Cart.create(user: current_user)
     session[:cart_id] = @current_cart.id unless session[:cart_id] == @current_cart.id
     @current_cart
   end
